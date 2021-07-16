@@ -5,10 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".modulos.music.MusicFragment">
 
-    <ImageView
-        android:id="@+id/btn_play_pause"
+    <include
+        android:id="@+id/btns_paly_record"
+        layout="@layout/top_paly_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/music_center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/ic_play_music" />
+        android:orientation="vertical"/>
 
 </FrameLayout>

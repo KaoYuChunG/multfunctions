@@ -1,25 +1,23 @@
 package com.example.multifunction.modulos.music
 
-import android.media.MediaPlayer
-import android.net.Uri
+import android.app.Application
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.multifunction.R
+import com.example.multifunction.modulos.BroadcastData
 
-class MusicFragment : Fragment(), View.OnClickListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnCompletionListener {
 
-    private lateinit var btnPlayPause: Button
-    private lateinit var mediaPlay: MediaPlayer
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
+class MusicFragment : Fragment(), View.OnClickListener{
 
-        }
-    }
+    private lateinit var btnPlay: Button
+    private lateinit var btnRecord: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,36 +26,33 @@ class MusicFragment : Fragment(), View.OnClickListener, MediaPlayer.OnPreparedLi
         val view = inflater.inflate(R.layout.fragment_music, container, false)
 
         initView(view)
+        childFragment(PlayFragment())
         return view
     }
 
     private fun initView(view: View) {
-        btnPlayPause = view.findViewById(R.id.btn_play_pause)
-        btnPlayPause.setOnClickListener(this)
-        btnPlayPause.isEnabled = false
+        btnPlay = view.findViewById(R.id.btn_play)
+        btnRecord = view.findViewById(R.id.btn_recorder)
+        btnPlay.setOnClickListener(this)
+        btnRecord.setOnClickListener(this)
+    }
 
-        mediaPlay = MediaPlayer()
-        mediaPlay.setOnPreparedListener(this)
-        mediaPlay.setOnCompletionListener(this)
-
-
-//        val filename = "android.resource://"+ getPackageName() + "/" + R.raw.bgm_healing02
-
-//        try {
-//            mediaPlay.setDataSource(this, Uri.parse(filename))
-        }
+    private fun childFragment(fragment : Fragment) {
+        val playFragment: Fragment = fragment
+        val transaction: FragmentTransaction = getChildFragmentManager().beginTransaction()
+        transaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+        transaction.addToBackStack(null)
+        transaction.replace(R.id.music_center, playFragment)
+        transaction.commit()
+    }
 
     override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+        when(v?.id) {
+            R.id.btn_play -> childFragment(PlayFragment())
+            R.id.btn_recorder -> childFragment(RecorderFragment())
+        }
     }
 
-    override fun onPrepared(mp: MediaPlayer?) {
-        TODO("Not yet implemented")
-    }
-
-    override fun onCompletion(mp: MediaPlayer?) {
-        TODO("Not yet implemented")
-    }
 }
 //    https://github.com/slamdon/kotlin-playground/blob/master/19-LittleBirdSound/app/src/main/java/devdon/com/recorder/PlayerActivity.kt
 

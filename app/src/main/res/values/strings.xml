@@ -6,4 +6,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="broacast_airport">AIRMODEL</string>
     <string name="broacast_music">MUSIC</string>
+    <string name="music_paly">PLAY</string>
+    <string name="music_record">RECORD</string>
 </resources>
