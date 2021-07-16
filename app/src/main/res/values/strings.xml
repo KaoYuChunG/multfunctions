@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Multifunction</string>
+    <string name="label">Multifunction</string>
+    <string name="label_broadcast_receiver">Broadcast Receiver</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="broacast_airport">AIRMODEL</string>
+    <string name="broacast_music">MUSIC</string>
+</resources>

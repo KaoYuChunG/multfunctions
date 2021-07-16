@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="30sp"
+    tools:context=".modulos.BroacastReceiverActivity">
+
+    <Button
+        android:id="@+id/btn_somar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/broacast_airport"/>
+    <Button
+        android:id="@+id/btn_dividir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/broacast_music"/>
+    <Button
+        android:id="@+id/btn_multiplicar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MULTIPLICAR"/>
+    <Button
+        android:id="@+id/btn_expoente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EXPOENCITE"/>
+    <LinearLayout
+        android:id="@+id/center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"/>
+</LinearLayout >
