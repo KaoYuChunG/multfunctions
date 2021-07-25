@@ -38,11 +38,11 @@ class MusicFragment : Fragment(), View.OnClickListener{
     }
 
     private fun childFragment(fragment : Fragment) {
-        val playFragment: Fragment = fragment
+        val fragment: Fragment = fragment
         val transaction: FragmentTransaction = getChildFragmentManager().beginTransaction()
         transaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
         transaction.addToBackStack(null)
-        transaction.replace(R.id.music_center, playFragment)
+        transaction.replace(R.id.music_center, fragment)
         transaction.commit()
     }
 
